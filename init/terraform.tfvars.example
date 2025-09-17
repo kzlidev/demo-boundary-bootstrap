@@ -1,0 +1,9 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
+friendly_name_prefix    = "<prefix>" #This should be unique across all deployments
+kms_region              = "<region>"
+kms_key_id              = "<aws-kms-id-recovery-key>"
+boundary_endpoint       = "<boundary-fqdn>"
+global_admin_login_name = "<admin>"
+global_admin_password   = "<password>"

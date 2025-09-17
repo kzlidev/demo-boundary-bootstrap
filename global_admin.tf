@@ -1,13 +1,6 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-resource "boundary_scope" "global" {
-  scope_id     = "global"
-  name         = "global"
-  description  = "Global Scope"
-  global_scope = true
-}
-
 resource "boundary_auth_method_password" "global" {
   scope_id    = "global"
   name        = "Global Password Auth"
@@ -30,6 +23,11 @@ resource "boundary_user" "ampw_global_admin" {
   ]
 }
 
+locals {
+  all_scope_ids = flatten([for project in module.boundary_projects : project.parent_scope])
+  all_project_ids = flatten([for project in module.boundary_projects : project.project_configs[*].id])
+}
+
 resource "boundary_role" "global_admin" {
   scope_id = "global"
   name     = "global_admin"
@@ -38,9 +36,9 @@ resource "boundary_role" "global_admin" {
     "ids=*;type=*;actions=*"
   ]
 
-  grant_scope_ids = [
-    "this",
-  ]
+  grant_scope_ids = concat([
+    "this"
+  ], local.all_project_ids, local.all_scope_ids)
 
   principal_ids = [
     boundary_user.ampw_global_admin.id,
