@@ -18,3 +18,7 @@ variable "global_admin_password" {
   type        = string
   description = "Global admin password"
 }
+
+variable "aws_region" {}
+
+variable "session_recording_bucket_name" {}

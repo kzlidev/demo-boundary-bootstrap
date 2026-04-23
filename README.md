@@ -25,6 +25,14 @@ The following resources are created:
   - [terraform-azurerm-boundary-enterprise-controller-hvd](https://registry.terraform.io/modules/hashicorp/boundary-enterprise-controller-hvd/azurerm/latest)
   - [terraform-google-boundary-enterprise-controller-hvd](https://registry.terraform.io/modules/hashicorp/boundary-enterprise-controller-hvd/google/latest)
 
+## Demo HTTPS Image 
+### Build HTTPS image using packer
+```sh
+cd amis/hashicats
+# Verify region is set correctly in variables.pkrvars.hcl file
+packer build -var-file="variables.pkrvars.hcl" .
+```
+
 ## Usage
 
 1. Nested within the [examples](./examples/) directory are subdirectories that contain ready-made Terraform configurations of example scenarios for how to call and deploy this module. To get started, choose an example scenario. There is an example per cloud.

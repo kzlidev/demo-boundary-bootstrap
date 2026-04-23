@@ -5,7 +5,7 @@ terraform {
   required_providers {
     boundary = {
       source  = "hashicorp/boundary"
-      version = ">= 1.1.15"
+      version = ">= 1.5.1"
     }
   }
 }
@@ -27,4 +27,6 @@ module "boundary" {
   friendly_name_prefix    = var.friendly_name_prefix
   global_admin_login_name = var.global_admin_login_name
   global_admin_password   = var.global_admin_password
+  aws_region = var.aws_region
+  session_recording_bucket_name = var.session_recording_bucket_name
 }

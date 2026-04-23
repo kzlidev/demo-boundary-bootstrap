@@ -14,3 +14,7 @@ output "org_information" {
 output "scope_project_ids" {
   value = module.boundary.project_ids
 }
+
+output "session_recording_bucket_id" {
+  value = module.boundary.session_recording_bucket_id
+}

@@ -12,6 +12,8 @@ variable "friendly_name_prefix" {
 #------------------------------------------------------------------------------
 # AWS Variables
 #------------------------------------------------------------------------------
+variable "aws_region" {}
+
 variable "kms_region" {
   type        = string
   description = "AWS KMS region"
@@ -21,6 +23,8 @@ variable "kms_key_id" {
   type        = string
   description = "AWS KMS key ID for recovery"
 }
+
+variable "session_recording_bucket_name" {}
 
 variable "boundary_endpoint" {
   type        = string

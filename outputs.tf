@@ -15,3 +15,7 @@ output "project_ids" {
   #  value = module.booundary_projects[*]
   value = [for scope in module.boundary_projects : { "${scope.parent_scope}" : scope.project_configs[*].id }]
 }
+
+output "session_recording_bucket_id" {
+  value = boundary_storage_bucket.aws.id
+}
