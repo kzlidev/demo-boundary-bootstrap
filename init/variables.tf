@@ -43,3 +43,20 @@ variable "global_admin_password" {
   type        = string
   description = "Global admin password"
 }
+
+#------------------------------------------------------------------------------
+# Boundary OIDC Auth Config
+#------------------------------------------------------------------------------
+variable "oidc_auth_name" {}
+
+variable "oidc_scope_id" {}
+
+variable "oidc_issuer" {}
+
+variable "oidc_client_id" {}
+
+variable "oidc_client_secret" {}
+
+variable "oidc_signing_algorithms" {}
+
+variable "oidc_api_url_prefix" {}

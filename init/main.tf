@@ -23,10 +23,17 @@ EOT
 }
 
 module "boundary" {
-  source                  = "../"
-  friendly_name_prefix    = var.friendly_name_prefix
-  global_admin_login_name = var.global_admin_login_name
-  global_admin_password   = var.global_admin_password
-  aws_region = var.aws_region
+  source                        = "../"
+  friendly_name_prefix          = var.friendly_name_prefix
+  global_admin_login_name       = var.global_admin_login_name
+  global_admin_password         = var.global_admin_password
+  aws_region                    = var.aws_region
   session_recording_bucket_name = var.session_recording_bucket_name
+  oidc_api_url_prefix           = var.oidc_api_url_prefix
+  oidc_auth_name                = var.oidc_auth_name
+  oidc_client_id                = var.oidc_client_id
+  oidc_client_secret            = var.oidc_client_secret
+  oidc_issuer                   = var.oidc_issuer
+  oidc_scope_id                 = var.oidc_scope_id
+  oidc_signing_algorithms       = var.oidc_signing_algorithms
 }

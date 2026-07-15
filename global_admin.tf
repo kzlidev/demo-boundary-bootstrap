@@ -59,3 +59,4 @@ resource "boundary_role" "global_anon_listing" {
     "u_anon",
   ]
 }
+

@@ -22,3 +22,17 @@ variable "global_admin_password" {
 variable "aws_region" {}
 
 variable "session_recording_bucket_name" {}
+
+variable "oidc_auth_name" {}
+
+variable "oidc_scope_id" {}
+
+variable "oidc_issuer" {}
+
+variable "oidc_client_id" {}
+
+variable "oidc_client_secret" {}
+
+variable "oidc_signing_algorithms" {}
+
+variable "oidc_api_url_prefix" {}
